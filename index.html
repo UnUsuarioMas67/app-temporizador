@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>App de Temporizador</title>
+		<script src="main.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="timer-app">
+			<div class="time">
+				<div id="circular-progress">
+					<div id="time-display" data-hide>
+						<span class="display" id="display-hours">00</span>
+						<span>:</span>
+						<span class="display" id="display-minutes">00</span>
+						<span>:</span>
+						<span class="display" id="display-seconds">00</span>
+					</div>
+
+					<div id="time-input">
+						<input class="input" type="number" name="input-hours" id="input-hours" min="0" max="99" value="0" />
+						<span>:</span>
+						<input class="input" type="number" name="input-minutes" id="input-minutes" min="0" max="59" value="0" />
+						<span>:</span>
+						<input class="input" type="number" name="input-seconds" id="input-seconds" min="0" max="59" value="0" />
+					</div>
+				</div>
+			</div>
+
+			<div class="buttons">
+				<button id="play-button">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						fill="currentColor"
+						class="bi bi-play-fill"
+						viewBox="0 0 16 16">
+						<path
+							d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+					</svg>
+				</button>
+				<button id="stop-button" disabled>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						fill="currentColor"
+						class="bi bi-stop-fill"
+						viewBox="0 0 16 16">
+						<path
+							d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</body>
+</html>

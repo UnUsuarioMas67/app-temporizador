@@ -1,0 +1,122 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	color: rgb(238, 238, 238);
+}
+
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background-color: rgb(0, 34, 77);
+}
+
+.timer-app {
+	display: grid;
+	grid-template-areas:
+		'time'
+		'buttons';
+	row-gap: 3rem;
+}
+
+.time {
+	grid-area: time;
+}
+
+#circular-progress {
+	position: relative;
+	display: grid;
+	place-items: center;
+
+	width: 330px;
+	height: 330px;
+	border-radius: 50%;
+	background: conic-gradient(rgb(255, 32, 78) 360deg, rgb(0, 31, 71) 0deg);
+}
+
+#circular-progress::before {
+	content: '';
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background-color: rgb(0, 34, 77);
+	border-radius: 50%;
+}
+
+#circular-progress > * {
+	position: relative;
+}
+
+.buttons {
+	grid-area: buttons;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+#time-display,
+#time-input {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	height: 65px;
+}
+
+#time-display[data-hide],
+#time-input[data-hide] {
+	display: none;
+}
+
+span:not(.display) {
+	font-size: 24px;
+}
+
+.display,
+.input {
+	font-size: 36px;
+	width: 75px;
+	padding: 10px 5px;
+}
+
+.display {
+	text-align: center;
+}
+
+.input {
+	text-align: end;
+}
+
+input {
+	background-color: rgb(0, 31, 71);
+	border: none;
+	border-radius: 10px;
+}
+
+button {
+	display: flex;
+	align-items: center;
+
+	background-color: rgb(255, 32, 78);
+	border: none;
+	border-radius: 50%;
+	padding: 4px;
+}
+
+button > svg {
+	width: 40px;
+	height: 40px;
+}
+
+button[disabled] {
+	background-color: rgb(99, 99, 99);
+}
+
+button:not([disabled]):hover {
+	filter: brightness(1.2);
+}
+
+button:not([disabled]):active {
+	filter: brightness(0.8);
+}
